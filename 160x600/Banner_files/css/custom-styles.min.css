@@ -87,12 +87,10 @@ body {
     margin: 0 auto;
     background: #fff;
     height: 600px;
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     top: auto;
     left: auto;
-    animation: 45s forwards fade-in-frame;
-    /* animation-iteration-count: 3; */
     border: 1px solid #000;
 }
 .banner__frame--bottom, .bottomSectionOuter, .list li, .one {
@@ -107,9 +105,13 @@ body {
 }
 .banner__frame--top {
     background-image: url(../img/banner_160X600.png);
+    position: relative;
     height: 360px;
     justify-content: flex-start;
     flex-direction: column;
+}
+.banner__frame-anime {
+    position: absolute;
 }
 .banner__frame--top h1 {
     font-weight: 400;
@@ -243,15 +245,12 @@ body {
     margin: 4px 0;
 }
 .banner__frame--one {
-    animation: none;
-    opacity: 1;
-    /* animation-delay: 0s; */
-    /* opacity: 1; */
+    animation: 30s forwards fade-in-one;
 }
 .banner__frame--two {
-    animation-delay: 5s;
+    animation: 30s forwards fade-in-two;
 }
-.banner__frame--two .banner__frame--top small {
+.banner__frame--top .banner__frame--two small {
     font-style: italic;
     font-weight: 700;
     font-size: 18px;
@@ -260,9 +259,9 @@ body {
     display: inline-block;
 }
 .banner__frame--three {
-    animation-delay: 10s;
+    animation: 30s forwards fade-in-three;
 }
-.banner__frame--three .banner__frame--top h1 {
+.banner__frame--top .banner__frame--three h1 {
     font-weight: 700;
     font-size: 27px;
     line-height: 30px;
@@ -281,34 +280,49 @@ body {
     border-radius: 100%;
     background: #253a71;
 }
-/* @keyframes fade-in-frame {
-    0% {
-    opacity: 0;
+@keyframes fade-in-one {
+    0% {opacity: 1;}
+    7.6% {opacity: 1;}
+    9.7% {opacity: 0;}
+    33.1% {opacity: 0;}
+    35.3% {opacity: 1;}
+    42.9% {opacity: 1;}
+    45% {opacity: 0;}
+    68.4% {opacity: 0;}
+    70.5%{opacity: 1;}
+    78.1% {opacity: 1;}
+    80.2% {opacity: 0;}
+    100% {opacity: 0;}
 }
-100%, 33.33%, 66.66% {
-    opacity: 1;
+@keyframes fade-in-two {
+    0% {opacity: 0;}
+    7.6% {opacity: 0;}
+    9.7% {opacity: 1;}
+    17.3% { opacity: 1}
+    19.4% {opacity: 0;}
+    42.9% {opacity: 0;}
+    45% {opacity: 1;}
+    52.6% {opacity: 1;}
+    54.7% {opacity: 0;}
+    78.1% {opacity: 0;}
+    80.2% {opacity: 1;}
+    87.8% {opacity: 1;}
+    89.9% {opacity: 0;}
+    100% {opacity: 0;}
 }
-} */
-
-@keyframes fade-in-frame {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+@keyframes fade-in-three {
+    0% {opacity: 0;}
+    17.3% {opacity: 0;}
+    19.4% {opacity: 1;}
+    33.1% {opacity: 1;}
+    35.3% {opacity: 0;}
+    52.6% {opacity: 0;}
+    54.7% {opacity: 1;}
+    68.4% {opacity: 1;}
+    70.5%{opacity: 0;}
+    87.8% {opacity: 0;}
+    89.9% {opacity: 1;}
+    100% {opacity: 1;}
 }
 #IsiContent {
     position: absolute;
